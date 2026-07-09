@@ -1,102 +1,47 @@
-# 📚 Library Management System Database Project
+# 📚 Library Management System (RDBMS)
 
-## 📌 Project Overview
+A robust relational database management project designed to handle core library operations, including book tracking, member registration, address management, and borrowing transactions. 
 
-The Library Management System is a database management project developed using SQL. The project is designed to manage library operations efficiently, including managing books, members, addresses, and other library-related records. This project demonstrates the implementation of database concepts such as table creation, relationships, CRUD operations, and ER diagram design.
-
-## 🎯 Objectives
-
-* To design and implement a relational database for a library.
-* To perform Create, Read, Update, and Delete (CRUD) operations.
-* To establish relationships between tables using primary and foreign keys.
-* To represent the database structure using an Entity Relationship (ER) Diagram.
-
-## 🛠 Technologies Used
-
-* SQL
-* MySQL / MariaDB
-* phpMyAdmin
-* ER Diagram
-
-## 📂 Project Features
-
-* Database creation and management
-* Multiple related tables
-* Insert records into tables
-* Retrieve data using SELECT queries
-* Update existing records
-* Delete records
-* Table relationships using keys
-* ER Diagram representation
-
-## 📊 Database Components
-
-The database includes tables for managing:
-
-* Library records
-* Member information
-* Address information
-* Related entities and relationships
-
-## CRUD Operations Implemented
-
-### Create
-
-```sql
-INSERT INTO table_name VALUES (...);
-```
-
-### Read
-
-```sql
-SELECT * FROM table_name;
-```
-
-### Update
-
-```sql
-UPDATE table_name
-SET column_name = value
-WHERE condition;
-```
-
-### Delete
-
-```sql
-DELETE FROM table_name
-WHERE condition;
-```
-
-## Entity Relationship (ER) Diagram
-
-The project includes an ER Diagram that illustrates the relationships between all database entities.
-
-## Learning Outcomes
-
-Through this project, the following concepts were practiced:
-
-* Relational Database Design
-* Database Normalization
-* SQL Queries
-* CRUD Operations
-* Primary Keys and Foreign Keys
-* Entity Relationship Modeling
-
-## Project Structure
-
-```
-Library-Management-System/
-│
-├── library_management_system.sql
-├── ER_Diagram.png
-├── CRUD_Queries.sql
-└── README.md
-```
-
-## Conclusion
-
-This Library Management System project provides practical experience in designing and implementing a relational database using SQL. It demonstrates database modeling, data manipulation, and relationship management concepts that are essential in database management systems.
+I developed this project to gain hands-on experience with **relational database design (RDBMS)**, **normalization**, and structured query optimization using SQL.
 
 ---
 
-⭐ If you found this project useful, feel free to star the repository.
+## 🎯 Objectives & Learning Outcomes
+
+* **Database Schema Design:** Architecting structured tables with strong relational integrity using primary keys and foreign keys.
+* **Data Normalization:** Applying normalization rules (1NF, 2NF, 3NF) to minimize data redundancy.
+* **SQL Proficiency:** Writing and optimizing transactional DDL/DML queries and CRUD operations.
+* **Entity-Relationship (ER) Modeling:** Visualizing structural data dependencies using an ER diagram.
+
+---
+
+## 🛠️ Technologies Used
+
+* **SQL Dialect:** MySQL / MariaDB
+* **Database Management:** phpMyAdmin / Command Line
+* **Modeling Tool:** Draw.io / MySQL Workbench (for ER Diagram)
+
+---
+
+## 📊 Database Architecture
+
+The schema maintains clean isolation of concerns across several core tables:
+* **Books:** Tracks titles, authors, publishers, and current availability status.
+* **Members:** Stores user credentials, contact details, and registration dates.
+* **Addresses:** Keeps structured location data mapped cleanly to members.
+* **Transactions:** Logs borrowing history, return deadlines, and pending returns.
+
+### Entity-Relationship (ER) Diagram
+The physical structural relations between these entities are mapped below:
+
+![ER Diagram](ER_Diagram.png)
+
+---
+
+## 🚀 Core SQL Operations Implemented
+
+### 1. Data Definition & Insertion (Create)
+```sql
+-- Example: Creating a member record
+INSERT INTO members (member_id, first_name, last_name, email, join_date) 
+VALUES (101, 'John', 'Doe', 'johndoe@example.com', CURDATE());
