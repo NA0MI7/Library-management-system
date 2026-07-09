@@ -1,3 +1,4 @@
+Markdown
 # 📚 Library Management System (RDBMS)
 
 A robust relational database management project designed to handle core library operations, including book tracking, member registration, address management, and borrowing transactions. 
@@ -45,3 +46,36 @@ The physical structural relations between these entities are mapped below:
 -- Example: Creating a member record
 INSERT INTO members (member_id, first_name, last_name, email, join_date) 
 VALUES (101, 'John', 'Doe', 'johndoe@example.com', CURDATE());
+2. Querying & Joins (Read)
+SQL
+-- Retrieve active borrowing transactions with member and book details
+SELECT m.first_name, m.last_name, b.title, t.borrow_date 
+FROM transactions t
+JOIN members m ON t.member_id = m.member_id
+JOIN books b ON t.book_id = b.book_id
+WHERE t.status = 'Active';
+3. Record Updates (Update)
+SQL
+-- Update book availability status when checked out
+UPDATE books 
+SET availability = 'No' 
+WHERE book_id = 405;
+4. Record Maintenance (Delete)
+SQL
+-- Remove a member account
+DELETE FROM members 
+WHERE member_id = 101;
+📁 Project Directory
+Plaintext
+Library-Management-System/
+│
+├── library_management_system.sql  # Database schema & seed data
+├── ER_Diagram.png                 # Structural entity relationship diagram
+├── CRUD_Queries.sql               # Complex queries, joins, and transaction scripts
+└── README.md                      # Project documentation
+👤 Author
+Abhijeet Prasad
+
+🎓 3rd Year Electronics & Communication Engineering (ECE) Student
+
+🏫 Indian Institute of Technology (BHU), Varanasi
